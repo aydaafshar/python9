@@ -18,7 +18,7 @@ class SpaceStation(BaseModel):
 def main() -> None:
     print("Space Station Data Validation")
     print("=" * 40)
-
+    print()
     station = SpaceStation(
         station_id="ISS001",
         name="International Space Station",
@@ -37,12 +37,12 @@ def main() -> None:
     print("Status:", "Operational" if station.is_operational
           else "Not operational")
     print("=" * 40)
-    print()
+
     try:
         SpaceStation(
             station_id="BAD01",
             name="Bad Station",
-            crew_size=30,
+            crew_size=30,  # invalid
             power_level=50.0,
             oxygen_level=50.0,
             last_maintenance="2026-02-01T10:30:00",
